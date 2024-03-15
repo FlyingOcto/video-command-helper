@@ -1,0 +1,139 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2EFE5; /* Lightest color for the background */
+    color: #3d3d3f; /* Dark grey for text */
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #E3E1D9; /* Slightly darker background for the container */
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin-top: 10px;
+}
+
+.form input {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #C7C8CC; /* Light grey for input borders */
+    background-color: white; /* White background for inputs */
+}
+
+.form button {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #76767a; /* Dark grey for button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    font-size: 1em;
+}
+
+.form button:hover {
+    background-color: #C7C8CC; /* Lighter grey on hover */
+}
+
+.format-section {
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid #C7C8CC; /* Light grey, matching your color scheme */
+    border-radius: 5px;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0px;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.output-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #E3E1D9; /* Slightly darker background for contrast */
+    border-radius: 5px;
+    border: 1px solid #C7C8CC; /* Light grey border for definition */
+    display: flex;
+
+    flex-direction: row; /* Change to lay out children in a row */
+    justify-content: flex-start; /* Align items to the left */
+    flex-wrap: wrap; /* Allow items to wrap as needed */
+    /*align-items: center;*/
+}
+
+#output {
+    /* Make sure output block takes full width if needed and allows button and indicator to sit next to each other */
+    flex-basis: 100%;
+}
+
+#copyButton {
+    cursor: pointer;
+    padding: 5px 10px; /* Adjust padding as needed */
+    margin-top: 10px;
+    /*margin-bottom: 10px;*/
+    margin-right: 10px; /* Add space between button and indicator */
+    /* No explicit width; padding and content define its size */
+    border-radius: 5px;
+    background-color: #76767a; /* Light grey, customizable */
+    border: none;
+    color: white;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#copyIndicator {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+    margin-left: 10px; /* Space from the button */
+    color: #4CAF50; /* Green color for visibility */
+    /*font-weight: bold;*/
+    align-self: center; /* Vertically align with the button */
+}

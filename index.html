@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A web GUI for yt-dlp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>yt-dlp command helper</h1>
+    <form class="form" id="dataForm">
+        <label for="link">Link:</label>
+        <input type="text" id="link" name="link" placeholder="Video or playlist link">
+        
+        <label for="path">Path:</label>
+        <input type="text" id="path" name="path" placeholder="Complete download path">
+        
+        <fieldset class="format-section">
+            <legend>Format:</legend>
+            <div class="radio-container">
+                <label class="radio-label"><input type="radio" name="format" value="original" checked>Original</label>
+                <label class="radio-label"><input type="radio" name="format" value="mp4">MP4</label>
+                <label class="radio-label"><input type="radio" name="format" value="original_audio">Original Audio</label>
+                <label class="radio-label"><input type="radio" name="format" value="mp3">MP3</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="format-section">
+            <legend>Other options:</legend>
+            <div class="checkbox-container">
+                <label class="checkbox-label"><input type="checkbox" id="ignoreErrors"> Ignore errors (Recommended if downloading a playlist)</label>
+            </div>
+        </fieldset>
+        
+        <button type="button" id="submitButton">Generate Command</button>
+    </form>
+
+    <div class="output-container">
+        <p id="output">Command:</p>
+        <button id="copyButton">Copy Command</button>
+        <span id="copyIndicator" style="display:none;">Copied!</span>
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
