@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const ignoreErrors = document.getElementById('ignoreErrors').checked ? '-i ' : '';
-        const commandString = `yt-dlp ${link} ${ignoreErrors} ${path} ${selectedFormat}`;
+        const commandString = `yt-dlp ${link} ${ignoreErrors} ${path} ${selectedFormat} -o %(title)s.%(ext)s`;
         document.getElementById('output').innerText = 'Command: ' + commandString;
     });
 
