@@ -23,6 +23,10 @@ h1 {
     text-align: center;
 }
 
+legend {
+    padding-inline: 10px;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -34,7 +38,7 @@ h1 {
 
 .form input {
     padding: 8px;
-    margin-top: 5px;
+    margin-block: 5px;
     border-radius: 5px;
     border: 1px solid #C7C8CC; /* Light grey for input borders */
     background-color: white; /* White background for inputs */
@@ -56,6 +60,33 @@ h1 {
 .form button:hover {
     background-color: #C7C8CC; /* Lighter grey on hover */
 }
+
+.durationform {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.durationform label {
+    margin-inline: 0 10px;
+}
+
+.durationform input {
+    padding: 8px;
+    margin-block: 5px;
+    border-radius: 5px;
+    border: 1px solid #C7C8CC; /* Light grey for input borders */
+    background-color: white; /* White background for inputs */
+    width: -webkit-fill-available;
+}
+
+.durationform span{
+    padding-inline: 10px;
+}
+
 
 .format-section {
     padding: 10px;
@@ -89,7 +120,6 @@ h1 {
 }
 
 .checkbox-label input[type="checkbox"] {
-    margin-top: 0px;
     margin-left: 10px;
     vertical-align: middle;
     cursor: pointer;
@@ -100,7 +130,7 @@ h1 {
     padding: 15px;
     background-color: #E3E1D9; /* Slightly darker background for contrast */
     border-radius: 5px;
-    border: 1px solid #C7C8CC; /* Light grey border for definition */
+    border: 2px solid #C7C8CC; /* Light grey border for definition */
     display: flex;
 
     flex-direction: row; /* Change to lay out children in a row */

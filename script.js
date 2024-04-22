@@ -26,8 +26,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        let duration = '';
+        switch (document.getElementById('duration1').value.trim()) {
+            case '':
+                if (document.getElementById('duration2').value.trim() == '') {
+                    break;
+                } else {
+                    duration = '--download-sections "*00:00-' + document.getElementById('duration2').value.trim() + '" --force-keyframes-at-cuts';
+                }
+                break;
+            default: 
+                if (document.getElementById('duration2').value.trim() == '') {
+                    duration = '--download-sections "*' + document.getElementById('duration1').value.trim() + '-inf" --force-keyframes-at-cuts';
+                } else {
+                    duration = '--download-sections "*' + document.getElementById('duration1').value.trim() + '-' + document.getElementById('duration2').value.trim() + '" --force-keyframes-at-cuts';
+                }
+        }
+
+
         const ignoreErrors = document.getElementById('ignoreErrors').checked ? '-i ' : '';
-        const commandString = `yt-dlp ${link} ${ignoreErrors} ${path} ${selectedFormat} -o %(title)s.%(ext)s`;
+        const commandString = `yt-dlp "${link}" ${ignoreErrors} ${path} ${selectedFormat} ${duration}  -o %(title)s.%(ext)s`;
         document.getElementById('output').innerText = 'Command: ' + commandString;
     });
 

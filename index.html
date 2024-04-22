@@ -12,10 +12,20 @@
     <form class="form" id="dataForm">
         <label for="link">Link:</label>
         <input type="text" id="link" name="link" placeholder="Video or playlist link">
-        
+
         <label for="path">Path:</label>
         <input type="text" id="path" name="path" placeholder="Complete download path">
-        
+    
+
+    </form>
+
+    <form class="durationform">
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration1" name="duration" placeholder="00:00"> <span>-</span> <input type="text" id="duration2" name="duration" placeholder="00:00">
+
+    </form>   
+
+    <form class="form" id="dataForm">
         <fieldset class="format-section">
             <legend>Format:</legend>
             <div class="radio-container">
@@ -29,10 +39,10 @@
         <fieldset class="format-section">
             <legend>Other options:</legend>
             <div class="checkbox-container">
-                <label class="checkbox-label"><input type="checkbox" id="ignoreErrors"> Ignore errors (Recommended if downloading a playlist)</label>
+                <label class="checkbox-label"><input type="checkbox" id="ignoreErrors"> Ignore errors (for playlist)</label>
             </div>
         </fieldset>
-        
+
         <button type="button" id="submitButton">Generate Command</button>
     </form>
 
