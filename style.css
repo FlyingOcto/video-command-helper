@@ -14,12 +14,12 @@ body {
 .container {
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #E3E1D9; /* Slightly darker background for the container */
 }
 
 h1 {
-    margin-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -61,7 +61,7 @@ legend {
     background-color: #C7C8CC; /* Lighter grey on hover */
 }
 
-.durationform {
+.inlineform {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -70,20 +70,21 @@ legend {
     margin-top: 10px;
 }
 
-.durationform label {
+.inlineform label {
     margin-inline: 0 10px;
+    white-space: nowrap;
 }
 
-.durationform input {
+.inlineform input {
     padding: 8px;
     margin-block: 5px;
     border-radius: 5px;
     border: 1px solid #C7C8CC; /* Light grey for input borders */
     background-color: white; /* White background for inputs */
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
-.durationform span{
+.inlineform span{
     padding-inline: 10px;
 }
 
@@ -117,6 +118,7 @@ legend {
     display: flex;
     justify-content: flex-start;
     padding-bottom: 10px;
+    flex-direction: column;
 }
 
 .checkbox-label input[type="checkbox"] {
@@ -142,11 +144,12 @@ legend {
 #output {
     /* Make sure output block takes full width if needed and allows button and indicator to sit next to each other */
     flex-basis: 100%;
+    line-height: 150%;
 }
 
 #copyButton {
     cursor: pointer;
-    padding: 5px 10px; /* Adjust padding as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
     margin-top: 10px;
     /*margin-bottom: 10px;*/
     margin-right: 10px; /* Add space between button and indicator */
@@ -166,4 +169,46 @@ legend {
     color: #4CAF50; /* Green color for visibility */
     /*font-weight: bold;*/
     align-self: center; /* Vertically align with the button */
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 2px solid #C7C8CC;
+    border-radius: 5px;
+    background-color: #E3E1D9;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+}
+
+    /* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding-block: 10px;
+    transition: 0.3s;
+    font-size: 17px;
+    width: 50%;
+}    
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 12px;
+    border-top: none;
 }

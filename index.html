@@ -7,52 +7,71 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>yt-dlp command helper</h1>
-    <form class="form" id="dataForm">
-        <label for="link">Link:</label>
-        <input type="text" id="link" name="link" placeholder="Video or playlist link">
+    <div class="container">
 
-        <label for="path">Path:</label>
-        <input type="text" id="path" name="path" placeholder="Complete download path">
-    
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'YtDlp')">yt-dlp</button>
+            <button class="tablinks" onclick="openTab(event, 'FFmpeg')">FFmpeg</button>
+        </div>
 
-    </form>
+        <div id="YtDlp" class="tabcontent">
+            
+            <h1>yt-dlp command</h1>
+            <form class="inlineform" id="dataForm">
+                <label for="link">Link:</label>
+                <input type="text" id="link" name="link" placeholder="Video or playlist link">
+                <!--
+                <label for="path">Path:</label>
+                <input type="text" id="path" name="path" placeholder="Complete download path">
+                -->
+            </form>
 
-    <form class="durationform">
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration1" name="duration" placeholder="00:00"> <span>-</span> <input type="text" id="duration2" name="duration" placeholder="00:00">
+            <form class="inlineform">
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration1" name="duration" placeholder="00:00"> <span>-</span> <input type="text" id="duration2" name="duration" placeholder="00:00">
 
-    </form>   
+            </form>
 
-    <form class="form" id="dataForm">
-        <fieldset class="format-section">
-            <legend>Format:</legend>
-            <div class="radio-container">
-                <label class="radio-label"><input type="radio" name="format" value="original" checked>Original</label>
-                <label class="radio-label"><input type="radio" name="format" value="mp4">MP4</label>
-                <label class="radio-label"><input type="radio" name="format" value="original_audio">Original Audio</label>
-                <label class="radio-label"><input type="radio" name="format" value="mp3">MP3</label>
+            <form class="form" id="dataForm">
+                <fieldset class="format-section">
+                    <legend>Format:</legend>
+                    <div class="radio-container">
+                        <label class="radio-label"><input type="radio" name="format" value="original" checked>Original</label>
+                        <label class="radio-label"><input type="radio" name="format" value="mp4">MP4</label>
+                        <label class="radio-label"><input type="radio" name="format" value="original_audio">Original Audio</label>
+                        <label class="radio-label"><input type="radio" name="format" value="mp3">MP3</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="format-section">
+                    <legend>Other options:</legend>
+                    <div class="checkbox-container">
+                        <label class="checkbox-label"><input type="checkbox" id="IgnoreErrors"> Ignore errors (for playlist)</label>
+                        <label class="checkbox-label"><input type="checkbox" id="SubOnly"> Show sub options (no download)</label>
+                    </div>
+                </fieldset>
+
+                <button type="button" id="submitButton">Generate Command</button>
+            </form>
+
+            <div class="output-container">
+                <p id="output">Command:</p>
+                <button id="copyButton">Copy Command</button>
+                <span id="copyIndicator" style="display:none;">Copied!</span>
             </div>
-        </fieldset>
 
-        <fieldset class="format-section">
-            <legend>Other options:</legend>
-            <div class="checkbox-container">
-                <label class="checkbox-label"><input type="checkbox" id="ignoreErrors"> Ignore errors (for playlist)</label>
-            </div>
-        </fieldset>
+        </div>
 
-        <button type="button" id="submitButton">Generate Command</button>
-    </form>
+        <div id="FFmpeg" class="tabcontent">
+            <h1>FFmpeg command</h1>
+            <form class="inlineform" id="dataForm">
+                <label for="filename">File name:</label>
+                <input type="text" id="filename" name="filename" placeholder="Include file extension">
+            </form>
+        </div>
 
-    <div class="output-container">
-        <p id="output">Command:</p>
-        <button id="copyButton">Copy Command</button>
-        <span id="copyIndicator" style="display:none;">Copied!</span>
+
     </div>
-
-</div>
 
 
 
