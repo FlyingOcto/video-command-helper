@@ -1,2 +1,2 @@
 #### Website
-https://flyingocto.github.io/yt-dlp-command-helper/
+https://flyingocto.github.io/video-command-helper/
