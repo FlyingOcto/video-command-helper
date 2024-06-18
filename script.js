@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementsByClassName('tablinks')[0].click(); // Automatically open the first tab
 
     // Event listener for the yt-dlp command generation button
-    document.getElementById('submitButton').addEventListener('click', function () {
+    document.getElementById('SubmitButton').addEventListener('click', function () {
         const link = document.getElementById('link').value;
         /*
         let pathInput = document.getElementById('path').value.trim();
@@ -42,8 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
             duration = `--download-sections "*00:00-${duration2}" --force-keyframes-at-cuts`;
         }
 
-        const IgnoreErrors = document.getElementById('IgnoreErrors').checked ? '-i ' : '';
-        const commandString = `yt-dlp ${IgnoreErrors} ${selectedFormat} ${duration} "${link}" -o %(title)s.%(ext)s`;
+        let SubOption = document.getElementById("subtitle").value;
+        let Subs = ""
+        if (SubOption) {
+            Subs = `--write-auto-sub --sub-lang "${SubOption}" `;
+        }
+
+        const IgnoreErrors = document.getElementById('IgnoreErrors').checked ? '-i' : '';
+        const NoDownload = document.getElementById('NoDownload').checked ? '--skip-download' : '';
+        const ShowSub = document.getElementById('ShowSub').checked ? '--list-subs' : '';
+        const ShowFormat = document.getElementById('ShowFormat').checked ? '-F' : '';
+        const commandString = `yt-dlp ${IgnoreErrors} ${NoDownload} ${ShowSub} ${ShowFormat} ${selectedFormat} ${Subs} ${duration} "${link}" -o %(title)s.%(ext)s`;
         /* const commandString = `yt-dlp ${IgnoreErrors}${path} ${selectedFormat} ${duration} "${link}" -o %(title)s.%(ext)s`;*/
         document.getElementById('output').innerText = 'Command: ' + commandString;
     });

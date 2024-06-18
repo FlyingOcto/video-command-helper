@@ -33,7 +33,7 @@ legend {
 }
 
 .form label {
-    margin-top: 10px;
+    margin: 10px 5px 0px;
 }
 
 .form input {
@@ -84,10 +84,18 @@ legend {
     width: 100%;
 }
 
+.inlineform select{
+    padding: 8px;
+    margin-block: 5px;
+    border-radius: 5px;
+    border: 1px solid #C7C8CC; /* Light grey for input borders */
+    background-color: white; /* White background for inputs */
+    width: 100%;
+}
+
 .inlineform span{
     padding-inline: 10px;
 }
-
 
 .format-section {
     padding: 10px;

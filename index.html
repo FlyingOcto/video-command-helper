@@ -26,10 +26,20 @@
                 -->
             </form>
 
-            <form class="inlineform">
+            <form class="inlineform" id="dataForm">
                 <label for="duration">Duration:</label>
                 <input type="text" id="duration1" name="duration" placeholder="00:00"> <span>-</span> <input type="text" id="duration2" name="duration" placeholder="00:00">
+            </form>
 
+            <form class="inlineform" id="dataForm">
+                <label for="subs">Subtitle Language:</label>
+                <select name="subs" id="subtitle">
+                    <option value="">No Subtitle</option>
+                    <option value="en">English</option>
+                    <option value="zh-Hans">Chinese (Simplified)</option>
+                    <option value="zh-Hant">Chinese (Tranditional)</option>
+                    <option value="ja">Japanese</option>
+                </select>
             </form>
 
             <form class="form" id="dataForm">
@@ -47,11 +57,13 @@
                     <legend>Other options:</legend>
                     <div class="checkbox-container">
                         <label class="checkbox-label"><input type="checkbox" id="IgnoreErrors"> Ignore errors (for playlist)</label>
-                        <label class="checkbox-label"><input type="checkbox" id="SubOnly"> Show sub options (no download)</label>
+                        <label class="checkbox-label"><input type="checkbox" id="NoDownload"> Skip download</label>
+                        <label class="checkbox-label"><input type="checkbox" id="ShowSub"> Show sub options</label>
+                        <label class="checkbox-label"><input type="checkbox" id="ShowFormat"> Show format options</label>
                     </div>
                 </fieldset>
 
-                <button type="button" id="submitButton">Generate Command</button>
+                <button type="button" id="SubmitButton">Generate Command</button>
             </form>
 
             <div class="output-container">
@@ -68,6 +80,12 @@
                 <label for="filename">File name:</label>
                 <input type="text" id="filename" name="filename" placeholder="Include file extension">
             </form>
+
+            <div class="output-container">
+                <p id="output">Command:</p>
+                <button id="copyButton">Copy Command</button>
+                <span id="copyIndicator" style="display:none;">Copied!</span>
+            </div>
         </div>
 
 
